@@ -66,7 +66,7 @@ header li a {
 
 /* メインビジュアル */
 #mainvisual {
-  background-image: url(img/mainbg.png);
+  background-image: url(../img/mainbg.png);
   background-size: cover;
   height: 500px;
   display: flex;
