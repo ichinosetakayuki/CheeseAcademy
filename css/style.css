@@ -1,0 +1,594 @@
+/* ここから下に記載していく */
+
+/* 全体共通 */
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.wrap {
+  max-width: 1200px;
+  width: calc(100% - 32px);
+  margin: 0 auto;
+}
+
+.section-ttl {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.section-ttl-en-y {
+  color: #ffd61a;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.section-ttl-en-b {
+  color: #222;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.section-ttl-ja {
+  font-size: 18px;
+}
+
+.text-content {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ヘッダー部分 */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header ul {
+  display: flex;
+  padding: 50px 0;
+  gap: 50px;
+}
+
+header li a {
+  font-size: 21px;
+  text-decoration: none;
+  color: #222
+}
+
+/* メインビジュアル */
+#mainvisual {
+  background-image: url(/img/mainbg.png);
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainvisual-text {
+  text-align: center;
+}
+
+.mainvisual-text h2 {
+  font-size: 48px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.mainvisual-text p {
+  font-size: 32px;
+  color: #fff;
+  margin-top: 30px;
+}
+
+/* ABOUT */
+.about-text {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.about-text {
+  font-size: 16px;
+}
+
+.about-text p+p {
+  margin-top: 40px;
+}
+
+.slide-show {
+  display: flex;
+  overflow: hidden;
+}
+
+.about-img {
+  animation: loop-slide 20s infinite ease 1s both;
+}
+
+@keyframes loop-slide {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translate(-100%);
+  }
+}
+
+.slide-show:hover .about-img {
+  animation-play-state: paused;
+}
+
+/* COURSE部分 */
+
+.course-contents {
+  background: #fafafa;
+}
+
+.course-item {
+  display: flex;
+}
+
+.course-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.course-img {
+  width: 50%;
+  flex: 1;
+}
+
+.course-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-text {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  /* background: #fafafa; */
+}
+
+.course-text-inner {
+  max-width: 480px;
+  width: 100%;
+  margin-left: 50px;
+}
+
+.course-item:nth-child(even) .course-text-inner {
+  margin: 0 50px 0 auto;
+}
+
+.course-text-inner h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* NEWS部分 */
+
+.news-area {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.article {
+  width: 300px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.article:nth-child(1)::before {
+  content: "NEW!";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  padding: 4px 8px;
+  background: red;
+  color: #fff;
+  font-weight: bold;
+  animation: flash 3s linear infinite;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.article-text {
+  margin-top: 30px;
+}
+
+.article p {
+  margin-top: 24px;
+}
+
+.article:hover {
+  opacity: .8;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.news-more {
+  width: 300px;
+  height: 60px;
+  background: #ffd61a;
+  margin: 60px auto;
+  text-align: center;
+  box-shadow: 4px 4px 10px #e6bc00;
+}
+
+.news-more a {
+  text-decoration: none;
+  line-height: 60px;
+  font-size: 18px;
+  color: #fafafa;
+  /* cursor: pointer; */
+}
+
+.news-more:hover {
+  cursor: pointer;
+  transform: translate(1px, 1px);
+  transition: all 0.2s ease;
+}
+
+.news-more:active {
+  box-shadow: 2px 2px 10px #e6bc00;
+  transform: translate(2px, 2px);
+}
+
+/* ACCESS部分 */
+
+#access {
+  background: #fafafa;
+}
+
+.access-info dl {
+  width: 100%;
+  /* max-width: 100%; */
+  margin: 0 auto 0 32%;
+  /* transform: translate(10%); */
+  padding: 60px 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 60px;
+  row-gap: 30px;
+}
+
+.access-info dt,
+.access-info dd {
+  /* height: 30px; */
+  line-height: 1.6;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* CONTACT部分 */
+
+.contact-text {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.contact-text p+p {
+  margin-top: 30px;
+}
+
+/* 問い合わせフォームエリア（シン） */
+.form-area {
+  display: flex;
+  justify-content: center;
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #bfbfbf;
+}
+
+.form-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.form-ttl {
+  width: 240px;
+  padding-left:16px;
+  padding-right: 64px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.form-ttl-type-b {
+  width: 240px;
+  padding-left:16px;
+  padding-right: 64px;
+  padding-top: 24px;
+  height: 100%;
+}
+
+.form-ttl-type-c {
+  width: 240px;
+  padding-left:16px;
+  padding-right: 64px;
+  padding-top: 8px;
+  height: 100%;
+}
+
+.form-answer {
+  width: 400px;
+  padding: 8px 0 8px 8px;
+  border-left: 1px solid #bfbfbf;
+}
+
+.form-answer input[type=text],
+.form-answer input[type=email],
+.form-answer select {
+  width: 328px;
+  height: 36px;
+  border: 1px solid #bfbfbf;
+}
+
+/* ここからチェックボックスのカスタマイズ */
+
+.contact-reason {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 12px 0;
+}
+
+.contact-reason input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #f0ece7;
+  border-radius: 4px;
+  background: #f0ece7;
+  cursor: pointer;
+  position: relative;
+}
+
+.contact-reason label {
+  cursor: pointer;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+/* チェック時にチェックマークを表示 */
+.contact-reason input[type="checkbox"]::before {
+  content: "\2713";
+  font-size: 16px;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.contact-reason input[type="checkbox"]:checked::before {
+  display: block;
+}
+
+/* チェックボックスおわり */
+
+.form-answer textarea {
+  width: 328px;
+  height: 108px;
+  border: 1px solid #bfbfbf;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 140px;
+}
+
+.form-btn button[type="submit"] {
+  width: 300px;
+  height: 60px;
+  background: #ffd61a;
+  text-align: center;
+  border: none;
+  box-shadow: 4px 4px 10px #e6bc00;
+  color: #fafafa;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.form-btn button[type="submit"]:hover {
+  transform: translate(1px, 1px);
+  transition: all 0.2s ease;
+}
+
+.form-btn button[type="submit"]:active {
+  box-shadow: 2px 2px 10px #e6bc00;
+  transform: translate(2px, 2px);
+}
+
+/* 問い合わせフォームエリアおわり */
+
+/* トップへのボタン */
+.to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background: #ffd61a;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px #e6bc00;
+  font-weight: bold;
+  cursor: pointer;
+  /* opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none; */
+}
+
+/* .to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+} */
+
+.to-top a {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+/* フッター部分 */
+footer {
+  background: #707070;
+  color: #fafafa;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* ここからレスポンシブ対応 */
+
+@media (max-width:1023px) {
+
+  header h1 img {
+    width: 200px;
+  }
+
+  header ul {
+    display: flex;
+    padding: 30px 0;
+    gap: 30px;
+  }
+
+  header li a {
+    font-size: 16px;
+  }
+
+  .course-item:nth-child(n) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .course-item:nth-child(n) .course-text-inner {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .course-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .course-text {
+    padding: 40px 20px;
+  }
+
+  .news-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .access-info dl {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:700px) {
+  header {
+    flex-direction: column;
+    padding-top: 30px;
+    align-items: start;
+  }
+
+  header ul {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .access-info dl {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+
+  .access-info dt::after {
+    content: " :";
+  }
+
+  .access-info dd {
+    padding-left: 20px;
+  }
+
+  .form-box {
+    border-top: none;
+  }
+
+  .form-item {
+    flex-direction: column;
+    border: none;
+    align-items: start;
+  }
+
+  .form-ttl,
+  .form-ttl-type-b,
+  .form-ttl-type-c {
+    padding-left: 0;
+    padding-right: 0;
+    width: fit-content;
+  }
+
+  .form-ttl label::after,
+  .form-ttl-type-b p::after,
+  .form-ttl-type-c label::after {
+    content: " :";
+  }
+
+  .form-answer {
+    border-left: none;
+    padding: 8px 0 8px 36px;
+  }
+
+  .contact-reason {
+    gap: 16px;
+  }
+
+  @media (max-width: 500px) {
+
+      .form-answer {
+        width: 100%;
+        padding-left: 8px;
+      }
+  }
+}
